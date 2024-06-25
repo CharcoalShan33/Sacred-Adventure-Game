@@ -75,38 +75,13 @@ public class Player : MonoBehaviour
            
             Movement();
         }
-    else
-        {
-            AttackAction();
-        }
 
+        Attack();
 
     }
 
-    
-
-    void Movement()
+    void Attack()
     {
-        inBattle = false;
-        xInput = Input.GetAxis("Horizontal");
-        yInput = Input.GetAxis("Vertical");
-
-        movement = new Vector2(xInput, yInput).normalized;
-
-        if (movement.x != 0 || movement.y != 0)
-        {
-            _anim.SetFloat("moveX", movement.x);
-            _anim.SetFloat("moveY", movement.y);
-
-            _anim.SetBool("isWalking", true);
-
-        }
-
-        else
-        {
-
-            _anim.SetBool("isWalking", false);
-        }
         float decreaseTime = Time.time - lastAttack;
 
         if (Input.GetKeyDown(KeyCode.Space) && decreaseTime > attackRate)
@@ -114,24 +89,34 @@ public class Player : MonoBehaviour
             lastAttack = Time.time;
             _anim.SetTrigger("Hit Target");
         }
-
     }
 
-    void AttackAction()
+    void Movement()
     {
-        if (inBattle)
+        inBattle = false;
+        xInput = Input.GetAxisRaw("Horizontal");
+        yInput = Input.GetAxisRaw("Vertical");
+
+        movement = new Vector2(xInput, yInput);
+
+        if (movement.x != 0 || movement.y != 0)
         {
-            
-            if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
+            _anim.SetFloat("moveX", movement.x);
+            _anim.SetFloat("moveY", movement.y);
+
+
+            if(xInput == 1 || xInput == -1 || yInput == 1 || yInput == -1)
             {
-                _anim.SetFloat("moveX", 1);
-                _anim.SetTrigger("Hit Target");
-
-              
+                _anim.SetFloat("lastX", xInput);
+                _anim.SetFloat("lastY", yInput);
             }
-
         }
+
+       
+        
+
     }
 
+    
     
 }

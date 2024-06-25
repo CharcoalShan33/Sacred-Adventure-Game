@@ -51,8 +51,8 @@ public class BattleHandler : MonoBehaviour
         }
 
        Transform charTransform =  Instantiate(pfCharacterBattle, position, Quaternion.identity);
-        CharacterBattle character = charTransform.GetComponent<CharacterBattle>();
-        character.Initiate(!isPlayerTeam);
+        //CharacterBattle character = charTransform.GetComponent<CharacterBattle>();
+        //character.Initiate(!isPlayerTeam);
        
     }
 
