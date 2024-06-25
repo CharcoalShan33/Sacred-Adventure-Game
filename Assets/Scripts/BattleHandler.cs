@@ -4,12 +4,32 @@ using UnityEngine;
 
 public class BattleHandler : MonoBehaviour
 {
-    [SerializeField]
+
+    private static BattleHandler instance;
+
+    public static BattleHandler GetInstance()
+    {
+        return instance;
+    }
+    
+
+
+  [SerializeField]
     private Transform pfCharacterBattle;
+
     [SerializeField]
     private Transform spawnSpotPlayer;
     [SerializeField]
     private Transform spawnSpotEnemy;
+
+    
+
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,7 +50,10 @@ public class BattleHandler : MonoBehaviour
             position = spawnSpotEnemy.position;
         }
 
-        Instantiate(pfCharacterBattle, position, Quaternion.identity);
+       Transform charTransform =  Instantiate(pfCharacterBattle, position, Quaternion.identity);
+        CharacterBattle character = charTransform.GetComponent<CharacterBattle>();
+        character.Initiate(!isPlayerTeam);
+       
     }
 
     // Update is called once per frame

@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
 
 
     private Rigidbody2D rig;
-    private Animator _anim;
+   public Animator _anim;
 
     [SerializeField]
     private float attackRate;
@@ -23,14 +23,18 @@ public class Player : MonoBehaviour
 
     float xInput;
     float yInput;
-    Vector2 movement;
+   Vector2 movement;
 
     
     // facing sprite direction
     Vector2 direction;
 
-    [SerializeField]
-    Transform target;
+   
+
+    bool faceX;
+    bool faceY;
+
+   public bool inBattle;
 
     private void Start()
     {
@@ -66,12 +70,24 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        Movement();
+        if (!inBattle)
+        {
+           
+            Movement();
+        }
+    else
+        {
+            AttackAction();
+        }
+
+
     }
 
+    
 
     void Movement()
     {
+        inBattle = false;
         xInput = Input.GetAxis("Horizontal");
         yInput = Input.GetAxis("Vertical");
 
@@ -100,4 +116,22 @@ public class Player : MonoBehaviour
         }
 
     }
+
+    void AttackAction()
+    {
+        if (inBattle)
+        {
+            
+            if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
+            {
+                _anim.SetFloat("moveX", 1);
+                _anim.SetTrigger("Hit Target");
+
+              
+            }
+
+        }
+    }
+
+    
 }
