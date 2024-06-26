@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7699933303059698724}
   - component: {fileID: 7836657514079781058}
   - component: {fileID: 3366278658176659100}
+  - component: {fileID: 401596191}
   m_Layer: 0
   m_Name: Assassin
   m_TagString: Untagged
@@ -25,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3173181472603957367}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -8, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -71,6 +72,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &401596191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3173181472603957367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed11990b14f8e4dfe9e2fa79908f95d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementSpeed: 3.59
+  _anim: {fileID: 472093262161369164}
+  attackRate: 0.45
+  inBattle: 0
 --- !u!1 &5038278401777274804
 GameObject:
   m_ObjectHideFlags: 0
@@ -143,9 +160,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -211832909
-  m_SortingLayer: 5
+  m_SortingLayer: 11
   m_SortingOrder: 33
-  m_Sprite: {fileID: 21300000, guid: 87e49af2681f34f4e8adf63ee550f24d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4b32da05b45bf40b69f1d5154eac2d65, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

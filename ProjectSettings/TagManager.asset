@@ -18,7 +18,7 @@ TagManager:
   - Projectiles
   - Ground
   - Collectable
-  - 
+  - Background
   - 
   - 
   - 
@@ -43,11 +43,26 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Water/Liquid
+    uniqueID: 420244493
+    locked: 0
   - name: Reference
     uniqueID: 3681590237
     locked: 0
   - name: BG
     uniqueID: 4218374391
+    locked: 0
+  - name: Walls 2
+    uniqueID: 4023493887
+    locked: 0
+  - name: Walls 1
+    uniqueID: 97746971
+    locked: 0
+  - name: TopWall
+    uniqueID: 2050135549
+    locked: 0
+  - name: Decor
+    uniqueID: 4201990475
     locked: 0
   - name: Collectables
     uniqueID: 4037657533
