@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: acb6f9214c46d491b9fdc2b915bc1975
+guid: 8cf08648fbe32485fb5c59189e4d9f7c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1

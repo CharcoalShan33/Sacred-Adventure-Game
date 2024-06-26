@@ -43,14 +43,14 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Water/Liquid
-    uniqueID: 420244493
-    locked: 0
   - name: Reference
     uniqueID: 3681590237
     locked: 0
   - name: BG
     uniqueID: 4218374391
+    locked: 0
+  - name: Water/Liquid
+    uniqueID: 420244493
     locked: 0
   - name: Walls 2
     uniqueID: 4023493887

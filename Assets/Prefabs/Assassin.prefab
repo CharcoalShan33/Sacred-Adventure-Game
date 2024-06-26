@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 7699933303059698724}
   - component: {fileID: 7836657514079781058}
   - component: {fileID: 3366278658176659100}
-  - component: {fileID: 401596191}
   m_Layer: 0
   m_Name: Assassin
   m_TagString: Untagged
@@ -48,8 +47,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.050219297, y: -0.20087838}
-  m_Size: {x: 2.408342, y: 4.696156}
+  m_Offset: {x: 0.060429096, y: -0.09878141}
+  m_Size: {x: 0.9177263, y: 1.8782803}
   m_Direction: 0
 --- !u!50 &3366278658176659100
 Rigidbody2D:
@@ -72,22 +71,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &401596191
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3173181472603957367}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed11990b14f8e4dfe9e2fa79908f95d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movementSpeed: 3.59
-  _anim: {fileID: 472093262161369164}
-  attackRate: 0.45
-  inBattle: 0
 --- !u!1 &5038278401777274804
 GameObject:
   m_ObjectHideFlags: 0
@@ -183,7 +166,7 @@ Animator:
   m_GameObject: {fileID: 5038278401777274804}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 37277949101344ff8b5fe886ff6f96e4, type: 2}
+  m_Controller: {fileID: 9100000, guid: e2ae9e61758e84639adcd0e5a5cd6fae, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
