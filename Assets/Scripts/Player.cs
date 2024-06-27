@@ -30,7 +30,7 @@ public class Player : MonoBehaviour
 
     AnimationClip aClip;
 
-    //private Vector3 offset = new Vector3(.5f, .1f, 0f);
+    private Vector3 offset = new Vector3(.5f, .1f, 0f);
     public bool inBattle;
 
     private void Start()
@@ -56,8 +56,9 @@ public class Player : MonoBehaviour
             Debug.Log("Find the component... or add one");
         }
 
-       
 
+        bottomLimit = tileMap.localBounds.min + offset;
+        topLimit = tileMap.localBounds.max + -offset;
         
     }
     private void FixedUpdate()
@@ -77,7 +78,9 @@ public class Player : MonoBehaviour
         }
 
         Attack();
-       
+
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, bottomLimit.x, topLimit.x), Mathf.Clamp(transform.position.y, bottomLimit.y, topLimit.y), transform.position.z);
+
     }
 
     void Attack()
