@@ -48,14 +48,10 @@ public class Player : MonoBehaviour
         bottomLimit = tileMap.localBounds.min + offset;
         topLimit = tileMap.localBounds.max + -offset;
 
-        if (instance != null || instance != this)
-        {
-            Destroy(gameObject);
-        }
-        else
-        {
+        
+        
             instance = this; 
-        }
+        
 
         DontDestroyOnLoad(gameObject);
     }
