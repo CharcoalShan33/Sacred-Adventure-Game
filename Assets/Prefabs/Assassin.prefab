@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6721132106560640373}
   - component: {fileID: 2247376400535468843}
   - component: {fileID: 1049913716633790071}
+  - component: {fileID: 283099799}
   m_Layer: 6
   m_Name: Assassin
   m_TagString: Hero
@@ -89,6 +90,33 @@ MonoBehaviour:
   _anim: {fileID: 3966002374037851643}
   attackRate: 0
   inBattle: 0
+--- !u!114 &283099799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2129714216699100608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 380331f3d58634525ab2011c2c26837b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerName: 
+  maxLevel: 100
+  playerLevel: 1
+  currentXP: 0
+  xpForEachLevel: 
+  baseLevelXP: 100
+  maxHP: 100
+  currentHP: 0
+  maxMana: 30
+  currentMana: 0
+  defense: 0
+  physAttack: 0
+  magAttack: 0
+  magicRES: 0
+  speed: 0
 --- !u!1 &8389269271895546371
 GameObject:
   m_ObjectHideFlags: 0
