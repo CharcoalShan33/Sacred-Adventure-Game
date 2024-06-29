@@ -15,6 +15,24 @@ EditorBuildSettings:
     path: Assets/Scenes/Dungeon-Major.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
+    path: Assets/Scenes/Dungeon Parts/Prison Room.unity
+    guid: acd3bedf5b3b54967b25ccae5acbddb5
+  - enabled: 1
+    path: Assets/Scenes/Dungeon Parts/Secret Area.unity
+    guid: edccb9d2d90c4413bb3ccd8a581a5a36
+  - enabled: 1
+    path: Assets/Scenes/Dungeon Parts/Shop Area.unity
+    guid: c760f72c2b0f74ff6baeb42969146e4a
+  - enabled: 1
+    path: Assets/Scenes/Dungeon Parts/Top Room.unity
+    guid: 6fd4ebf6e61644fe5bd7d936bc8277cf
+  - enabled: 1
+    path: Assets/Scenes/Dungeon Parts/Underground.unity
+    guid: 47a55bea54a694654809e8ce50d78531
+  - enabled: 1
     path: Assets/Scenes/BattleScene.unity
     guid: 76f04ce07e5d341c8a87cc714dd587bb
+  - enabled: 1
+    path: Assets/Scenes/BossBattle.unity
+    guid: dc1c1eef82f1d4c45909fa7c7e26e400
   m_configObjects: {}

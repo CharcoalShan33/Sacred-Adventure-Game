@@ -8,29 +8,47 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
 
-    //[SerializeField] PlayerStats[] pStats;
+    [SerializeField] PlayerStats[] pStats;
 
-    // public bool gameMenuOpen, dialogBoxOpen, shopOpen
+    public bool gameMenuOpen, dialogBoxOpen, shopOpen, craftOpen;
 
     public bool isBattleActive;
 
     // Start is called before the first frame update
     void Start()
     {
-        if(instance != null && instance != this)
+        if (instance != null && instance != this)
         {
-            Destroy(this);
+            Destroy(gameObject);
         }
+        else
+        {
+            instance = this;
+        }
+        DontDestroyOnLoad(gameObject);
+
+        pStats = FindObjectsOfType<PlayerStats>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(gameMenuOpen || dialogBoxOpen || shopOpen || craftOpen)
+        {
+            Player.instance.DeactivateMovement(true);
+        }
+        else
+        {
+            Player.instance.DeactivateMovement(false);
+        }
     }
 
-    public bool BattleIsAlive()
+    public PlayerStats[] GetPlayerStats()
     {
-        return true;
+        return pStats;
+    }
+    public bool BattleIsAlive(bool battle)
+    {
+        return battle;
     }
 }

@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 110472777462028225}
-  - component: {fileID: 110472777462028230}
   - component: {fileID: 110472777462028231}
+  - component: {fileID: 8519986533663324632}
   m_Layer: 6
   m_Name: NPC
   m_TagString: Untagged
@@ -34,18 +34,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &110472777462028230
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 110472777462028228}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 838fabc9749a44c299ace8d93f47651d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!70 &110472777462028231
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -56,12 +44,32 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1.9876884, y: 1.468382}
-  m_Size: {x: 1.6102402, y: 2.4339683}
+  m_Offset: {x: -3.604695, y: 1.4683822}
+  m_Size: {x: 4.8442516, y: 4.8442516}
   m_Direction: 0
+--- !u!114 &8519986533663324632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 110472777462028228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b4aa16e328e542659344525f8342a4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sentences:
+  - '#Seller'
+  - Hello.
+  - How can I help you?
+  - '#Hero'
+  - I am here to buy something.
+  - '#Seller'
+  - Is that all
 --- !u!1 &110472777917454586
 GameObject:
   m_ObjectHideFlags: 0

@@ -24,7 +24,22 @@ public class Player : MonoBehaviour
     Vector2 movement;
     AnimationClip aClip;
     private Vector3 offset = new Vector3(.5f, .1f, 0f);
-    public bool inBattle;
+    bool deactivateMove = false;
+
+    public string transitionName;
+
+    private void Awake()
+    {
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            instance = this;
+        }
+        DontDestroyOnLoad(gameObject);
+    }
     private void Start()
     {
         //target = GameObject.FindGameObjectWithTag("Enemy").transform;
@@ -48,25 +63,27 @@ public class Player : MonoBehaviour
         bottomLimit = tileMap.localBounds.min + offset;
         topLimit = tileMap.localBounds.max + -offset;
 
-        
-        
-            instance = this; 
-        
-
-        DontDestroyOnLoad(gameObject);
     }
     private void FixedUpdate()
     {
-        movement = new Vector2(xInput, yInput);
-        rig.velocity = movement * movementSpeed;
+
+
     }
     private void Update()
     {
-        if (!inBattle)
-        {
+        if (deactivateMove)
 
+        {
+            movement = Vector2.zero;
+            xInput = 0;
+            yInput = 0;
+           
+        }
+        else
+        {
             Movement();
         }
+
         Attack();
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, bottomLimit.x, topLimit.x), Mathf.Clamp(transform.position.y, bottomLimit.y, topLimit.y), transform.position.z);
     }
@@ -81,9 +98,14 @@ public class Player : MonoBehaviour
     }
     void Movement()
     {
-        inBattle = false;
+
         xInput = Input.GetAxis("Horizontal");
         yInput = Input.GetAxis("Vertical");
+        movement = new Vector2(xInput, yInput);
+
+
+        rig.velocity = movement * movementSpeed;
+
         if (movement.x != 0 || movement.y != 0)
         {
             _anim.SetFloat("moveX", movement.x);
@@ -94,10 +116,20 @@ public class Player : MonoBehaviour
             _anim.SetFloat("lastX", movement.x);
             _anim.SetFloat("lastY", movement.y);
         }
+
+
+
+
     }
     public void SetBounds(Vector3 bottomScreen, Vector3 topScreen)
     {
         bottomLimit = bottomScreen + offset;
         topLimit = topScreen + -offset;
+    }
+
+    public bool DeactivateMovement(bool movement)
+    {
+        deactivateMove = movement;
+        return movement;
     }
 }

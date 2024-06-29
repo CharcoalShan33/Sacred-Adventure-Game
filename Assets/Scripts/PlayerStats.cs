@@ -6,20 +6,18 @@ public class PlayerStats : MonoBehaviour
 {
 
 
-    [SerializeField] string playerName;
+    public string playerName;
 
     [SerializeField] int maxLevel = 100;
-    [SerializeField] int playerLevel = 1;
-    [SerializeField] int currentXP;
+    public int playerLevel = 1;
+    public int currentXP;
     [SerializeField] int[] xpForEachLevel;
     [SerializeField] int baseLevelXP = 100;
 
-    [SerializeField] int maxHP = 100;
-    [SerializeField] int currentHP;
-
-
-    [SerializeField] int maxMana = 30;
-    [SerializeField] int currentMana;
+    public int maxHP = 100;
+    public int currentHP;
+    public  int maxMana = 30;
+    public int currentMana;
 
     [SerializeField] int defense; // resist physical attacks
     [SerializeField] int physAttack;// physical attacks
@@ -54,8 +52,7 @@ public class PlayerStats : MonoBehaviour
             //xpForEachLevel[i] = (int)((0.2 * i * Mathf.Exp(3)) + (3.06 * i * Mathf.Exp(2) + (105.6 * i)));
         }
 
-        print(Mathf.Pow(6, 1.8f));
-        print(Mathf.Exp(6));
+        
     }
 
 
@@ -83,29 +80,27 @@ public class PlayerStats : MonoBehaviour
             {
 
 
-                physAttack += randomStat;
-                defense += randomStat;
-                speed += randomStat;
-
-
+               physAttack =  physAttack += randomStat;
+                defense = defense += randomStat;
+                speed = speed += randomStat;
 
             }
             else
             {
-                magAttack += randomStat;
-                magicRES += randomStat;
+                magAttack = magAttack += randomStat;
+                magicRES = magicRES += randomStat;
 
             }
 
             maxHP = Mathf.FloorToInt(maxHP * 1.5f);
-            currentHP = maxHP;
+            //currentHP = maxHP;
+            maxHP = currentHP;
 
             maxMana = Mathf.FloorToInt(maxMana * 1.05f);
-            currentHP = maxHP;
+            //currentHP = maxHP;
+            maxMana = currentMana;
         }
-
-
-
-
     }
+    
+
 }
