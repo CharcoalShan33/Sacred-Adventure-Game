@@ -19,12 +19,12 @@ public class PlayerStats : MonoBehaviour
     public  int maxMana = 30;
     public int currentMana;
 
-    [SerializeField] int defense; // resist physical attacks
-    [SerializeField] int physAttack;// physical attacks
+   public  int defense; // resist physical attacks
+    public int physAttack;// physical attacks
 
-    [SerializeField] int magAttack; // magical attacks
-    [SerializeField] int magicRES; // resist magical attacks
-    [SerializeField] int speed; ///  determines who will act first.
+    public int magAttack; // magical attacks
+    public int magicRES; // resist magical attacks
+    public int speed; ///  determines who will act first.
 
 
     //[SerializeField] int dexterity; -- ability to hold a weapon

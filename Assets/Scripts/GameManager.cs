@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class GameManager : MonoBehaviour
 {
 
     public static GameManager instance;
 
+    CinemachineVirtualCamera cam;
 
     [SerializeField] PlayerStats[] pStats;
 
@@ -28,12 +30,14 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
         pStats = FindObjectsOfType<PlayerStats>();
+
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(gameMenuOpen || dialogBoxOpen || shopOpen || craftOpen)
+        if(gameMenuOpen || dialogBoxOpen || shopOpen || craftOpen || isBattleActive)
         {
             Player.instance.DeactivateMovement(true);
         }

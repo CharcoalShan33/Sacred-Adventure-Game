@@ -72,7 +72,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -211832909
-  m_SortingLayer: 11
+  m_SortingLayer: 10
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 32c4020bf4c3a4dbf85cb99a64c475ef, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -95,7 +95,7 @@ Animator:
   m_GameObject: {fileID: 154527593546059897}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 7e4183e294a824fd1861235215a35781, type: 2}
+  m_Controller: {fileID: 9100000, guid: 21c76b055766e47178d823516f1dbfa6, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -117,6 +117,7 @@ GameObject:
   - component: {fileID: 8398252678270975155}
   - component: {fileID: 1579601248855652012}
   - component: {fileID: 7810316474030202280}
+  - component: {fileID: 29969236345679913}
   m_Layer: 0
   m_Name: Knight 2
   m_TagString: Untagged
@@ -176,4 +177,31 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
+--- !u!114 &29969236345679913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6808807878311767315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 380331f3d58634525ab2011c2c26837b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerName: 
+  maxLevel: 100
+  playerLevel: 1
+  currentXP: 0
+  xpForEachLevel: 
+  baseLevelXP: 100
+  maxHP: 200
+  currentHP: 200
+  maxMana: 40
+  currentMana: 35
+  defense: 45
+  physAttack: 40
+  magAttack: 20
+  magicRES: 20
+  speed: 25
