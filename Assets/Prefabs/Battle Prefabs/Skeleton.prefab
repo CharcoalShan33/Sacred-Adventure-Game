@@ -48,8 +48,14 @@ MonoBehaviour:
   isPlayer: 0
   characterName: Skelet
   attacksAvailable:
-  - Attack
-  - Flee
+  - Void
+  - Slash
+  - Hack
+  - EnergyBall
+  - Strike
+  - Strike
+  - Lightning
+  - Fireball
   currentHP: 300
   maxHp: 300
   currentMana: 60

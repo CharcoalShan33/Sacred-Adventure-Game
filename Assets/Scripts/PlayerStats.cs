@@ -27,7 +27,7 @@ public class PlayerStats : MonoBehaviour
     public int speed; ///  determines who will act first.
 
 
-    //[SerializeField] int dexterity; -- ability to hold a weapon
+    public int dexterity; //-- ability to hold a weapon
 
     [ContextMenu("Level Up")]
     private void Start()

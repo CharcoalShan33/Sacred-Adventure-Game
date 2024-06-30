@@ -100,8 +100,14 @@ MonoBehaviour:
   isPlayer: 0
   characterName: Orc
   attacksAvailable:
-  - Attack
-  - Flee
+  - Void
+  - Slash
+  - EnergyBall
+  - Hack
+  - Fireball
+  - Strike
+  - Lightning
+  - Spikes
   currentHP: 200
   maxHp: 200
   currentMana: 25

@@ -26,6 +26,8 @@ public class Player : MonoBehaviour
     private Vector3 offset = new Vector3(.5f, .1f, 0f);
     bool deactivateMove = false;
 
+    bool beforeBattle;
+
     public string transitionName;
 
     private void Awake()
@@ -62,6 +64,7 @@ public class Player : MonoBehaviour
         }
         bottomLimit = tileMap.localBounds.min + offset;
         topLimit = tileMap.localBounds.max + -offset;
+        
 
     }
     private void FixedUpdate()
@@ -71,6 +74,10 @@ public class Player : MonoBehaviour
     }
     private void Update()
     {
+        if (beforeBattle)
+        {
+            
+        }
         if (deactivateMove)
 
         {

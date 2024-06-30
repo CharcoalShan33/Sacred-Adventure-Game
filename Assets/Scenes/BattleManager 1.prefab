@@ -512,6 +512,39 @@ MonoBehaviour:
   - {fileID: -7170064352133315893, guid: ac3f2fbf52f0c4ba78300693edb09a63, type: 3}
   - {fileID: 3670183540961358696, guid: 022dfd2ca5ca744ada10b59dbb59b912, type: 3}
   - {fileID: 885224849700534490, guid: dd8394e14f1c44813b2ec926911fef86, type: 3}
+  battleList:
+  - moveName: Strike
+    manaCost: 15
+    power: 30
+    effect: {fileID: 9053397741720780673, guid: b34f9ffd608e14922bd6855724f5f72e, type: 3}
+  - moveName: Void
+    manaCost: 40
+    power: 40
+    effect: {fileID: 2002624943907859669, guid: 2aa139a7e76ef43eeb7c336937b94f0e, type: 3}
+  - moveName: Slash
+    manaCost: 5
+    power: 30
+    effect: {fileID: 5114667039948029294, guid: 6d53b3c61e960435dbc263c9ae458854, type: 3}
+  - moveName: Hack
+    manaCost: 5
+    power: 30
+    effect: {fileID: 5083000248840716114, guid: 152d64228cee448b89707d84535adcc8, type: 3}
+  - moveName: Spikes
+    manaCost: 20
+    power: 20
+    effect: {fileID: 3989677753022235528, guid: 53d3d06ffbf6549cfb052cd30614a436, type: 3}
+  - moveName: Lightning
+    manaCost: 40
+    power: 30
+    effect: {fileID: 1866341992196068141, guid: 06b4e929c96f341d5ac27a57ebacb542, type: 3}
+  - moveName: Energy Ball
+    manaCost: 55
+    power: 30
+    effect: {fileID: 8090628046104826849, guid: 464235aa44b6449cda88e3365bed6d1e, type: 3}
+  - moveName: Fireball
+    manaCost: 15
+    power: 20
+    effect: {fileID: 3766406672884748561, guid: ecd6788f742424f328c8825524b6a6b5, type: 3}
 --- !u!1001 &168911259887839939
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -782,6 +815,42 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3670183540961358696, guid: 022dfd2ca5ca744ada10b59dbb59b912, type: 3}
+      propertyPath: attacksAvailable.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3670183540961358696, guid: 022dfd2ca5ca744ada10b59dbb59b912, type: 3}
+      propertyPath: attacksAvailable.Array.data[0]
+      value: Strike
+      objectReference: {fileID: 0}
+    - target: {fileID: 3670183540961358696, guid: 022dfd2ca5ca744ada10b59dbb59b912, type: 3}
+      propertyPath: attacksAvailable.Array.data[1]
+      value: EnergyBall
+      objectReference: {fileID: 0}
+    - target: {fileID: 3670183540961358696, guid: 022dfd2ca5ca744ada10b59dbb59b912, type: 3}
+      propertyPath: attacksAvailable.Array.data[2]
+      value: Fireball
+      objectReference: {fileID: 0}
+    - target: {fileID: 3670183540961358696, guid: 022dfd2ca5ca744ada10b59dbb59b912, type: 3}
+      propertyPath: attacksAvailable.Array.data[3]
+      value: Hack
+      objectReference: {fileID: 0}
+    - target: {fileID: 3670183540961358696, guid: 022dfd2ca5ca744ada10b59dbb59b912, type: 3}
+      propertyPath: attacksAvailable.Array.data[4]
+      value: Slash
+      objectReference: {fileID: 0}
+    - target: {fileID: 3670183540961358696, guid: 022dfd2ca5ca744ada10b59dbb59b912, type: 3}
+      propertyPath: attacksAvailable.Array.data[5]
+      value: Void
+      objectReference: {fileID: 0}
+    - target: {fileID: 3670183540961358696, guid: 022dfd2ca5ca744ada10b59dbb59b912, type: 3}
+      propertyPath: attacksAvailable.Array.data[6]
+      value: Spikes
+      objectReference: {fileID: 0}
+    - target: {fileID: 3670183540961358696, guid: 022dfd2ca5ca744ada10b59dbb59b912, type: 3}
+      propertyPath: attacksAvailable.Array.data[7]
+      value: Lightning
+      objectReference: {fileID: 0}
     - target: {fileID: 8317284105422485488, guid: 022dfd2ca5ca744ada10b59dbb59b912, type: 3}
       propertyPath: m_Name
       value: Orc
@@ -971,6 +1040,34 @@ PrefabInstance:
     - target: {fileID: 791045882237510993, guid: dd8394e14f1c44813b2ec926911fef86, type: 3}
       propertyPath: m_Name
       value: Skeleton
+      objectReference: {fileID: 0}
+    - target: {fileID: 885224849700534490, guid: dd8394e14f1c44813b2ec926911fef86, type: 3}
+      propertyPath: attacksAvailable.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 885224849700534490, guid: dd8394e14f1c44813b2ec926911fef86, type: 3}
+      propertyPath: attacksAvailable.Array.data[0]
+      value: Void
+      objectReference: {fileID: 0}
+    - target: {fileID: 885224849700534490, guid: dd8394e14f1c44813b2ec926911fef86, type: 3}
+      propertyPath: attacksAvailable.Array.data[1]
+      value: Strike
+      objectReference: {fileID: 0}
+    - target: {fileID: 885224849700534490, guid: dd8394e14f1c44813b2ec926911fef86, type: 3}
+      propertyPath: attacksAvailable.Array.data[2]
+      value: Hack
+      objectReference: {fileID: 0}
+    - target: {fileID: 885224849700534490, guid: dd8394e14f1c44813b2ec926911fef86, type: 3}
+      propertyPath: attacksAvailable.Array.data[3]
+      value: Slash
+      objectReference: {fileID: 0}
+    - target: {fileID: 885224849700534490, guid: dd8394e14f1c44813b2ec926911fef86, type: 3}
+      propertyPath: attacksAvailable.Array.data[4]
+      value: Slash
+      objectReference: {fileID: 0}
+    - target: {fileID: 885224849700534490, guid: dd8394e14f1c44813b2ec926911fef86, type: 3}
+      propertyPath: attacksAvailable.Array.data[5]
+      value: EnergyBall
       objectReference: {fileID: 0}
     - target: {fileID: 1176941267777996915, guid: dd8394e14f1c44813b2ec926911fef86, type: 3}
       propertyPath: m_RootOrder
