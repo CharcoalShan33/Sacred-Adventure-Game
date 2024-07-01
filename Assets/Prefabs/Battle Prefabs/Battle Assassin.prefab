@@ -132,7 +132,7 @@ MonoBehaviour:
   isPlayer: 1
   characterName: Crow
   attacksAvailable: []
-  currentHP: 150
+  currentHP: 0
   maxHp: 300
   currentMana: 30
   maxMana: 55
@@ -141,6 +141,7 @@ MonoBehaviour:
   defense: 15
   magicRes: 30
   magicAttack: 35
+  dexterity: 30
   weaponPower: 50
   armorValue: 30
   isDead: 0

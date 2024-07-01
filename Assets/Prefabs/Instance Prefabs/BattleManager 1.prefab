@@ -72,6 +72,40 @@ MonoBehaviour:
   - {fileID: -7170064352133315893, guid: ac3f2fbf52f0c4ba78300693edb09a63, type: 3}
   - {fileID: 3670183540961358696, guid: 022dfd2ca5ca744ada10b59dbb59b912, type: 3}
   - {fileID: 885224849700534490, guid: dd8394e14f1c44813b2ec926911fef86, type: 3}
+  battleList:
+  - moveName: Energy Ball
+    manaCost: 5
+    power: 20
+    effect: {fileID: 8092493947480736575, guid: 464235aa44b6449cda88e3365bed6d1e, type: 3}
+  - moveName: Fireball
+    manaCost: 5
+    power: 20
+    effect: {fileID: 3766406672884748561, guid: ecd6788f742424f328c8825524b6a6b5, type: 3}
+  - moveName: Hack
+    manaCost: 1
+    power: 15
+    effect: {fileID: 4505368211546002419, guid: 152d64228cee448b89707d84535adcc8, type: 3}
+  - moveName: Slash
+    manaCost: 1
+    power: 15
+    effect: {fileID: 0}
+  - moveName: Void
+    manaCost: 5
+    power: 20
+    effect: {fileID: 2002624943907859669, guid: 2aa139a7e76ef43eeb7c336937b94f0e, type: 3}
+  - moveName: Lightning
+    manaCost: 5
+    power: 20
+    effect: {fileID: 1866341992196068141, guid: 06b4e929c96f341d5ac27a57ebacb542, type: 3}
+  - moveName: Strike
+    manaCost: 5
+    power: 15
+    effect: {fileID: 0}
+  - moveName: Spikes
+    manaCost: 5
+    power: 10
+    effect: {fileID: 0}
+  selector: {fileID: 6796311500329435829, guid: 8f6a777e6bdbc49bb8ed0a32ca27504d, type: 3}
 --- !u!1 &7471970227851913401
 GameObject:
   m_ObjectHideFlags: 0

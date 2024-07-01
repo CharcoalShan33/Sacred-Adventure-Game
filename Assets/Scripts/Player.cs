@@ -92,7 +92,9 @@ public class Player : MonoBehaviour
         }
 
         Attack();
-        transform.position = new Vector3(Mathf.Clamp(transform.position.x, bottomLimit.x, topLimit.x), Mathf.Clamp(transform.position.y, bottomLimit.y, topLimit.y), transform.position.z);
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x,
+            bottomLimit.x, topLimit.x), Mathf.Clamp(transform.position.y, bottomLimit.y, topLimit.y),
+            transform.position.z);
     }
     void Attack()
     {

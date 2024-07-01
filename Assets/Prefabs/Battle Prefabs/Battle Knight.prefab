@@ -134,7 +134,7 @@ MonoBehaviour:
   attacksAvailable:
   - Attack
   - Flee
-  currentHP: 250
+  currentHP: 248
   maxHp: 300
   currentMana: 40
   maxMana: 45
@@ -143,6 +143,7 @@ MonoBehaviour:
   defense: 45
   magicRes: 35
   magicAttack: 30
+  dexterity: 50
   weaponPower: 75
   armorValue: 75
   isDead: 0

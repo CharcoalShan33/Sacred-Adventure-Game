@@ -10,8 +10,10 @@ public class PlayerStats : MonoBehaviour
 
     [SerializeField] int maxLevel = 100;
     public int playerLevel = 1;
-    public int currentXP;
-    [SerializeField] int[] xpForEachLevel;
+    public int totalXP; // total xp gained or the current amount of exp held
+    [SerializeField] int[] xpForEachLevel; /// <summary>
+        // level xp required;
+    /// </summary>
     [SerializeField] int baseLevelXP = 100;
 
     public int maxHP = 100;

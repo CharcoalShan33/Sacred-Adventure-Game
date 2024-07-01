@@ -25,8 +25,12 @@ public class BattleManager : MonoBehaviour
     [SerializeField] List<BattleCharacter> activeCharacters = new List<BattleCharacter>();
 
     [SerializeField] BattleMoves[] battleList;
-    CinemachineVirtualCamera cam;
 
+    [SerializeField] CharacterDamageUI damageText1;
+    //CinemachineVirtualCamera cam;
+
+
+    [SerializeField] GameObject selector;
     // Start is called before the first frame update
     void Start()
     {
@@ -47,10 +51,10 @@ public class BattleManager : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.I))
+        if ( Input.GetKeyDown(KeyCode.I)  )
         {
-
-            StartBatttle(new string[] { "Skelet", "Orc" });
+            
+            StartBatttle(new string[] { "Skeleton", "Orc", "MagicSkeleton" });
         }
         if (Input.GetKeyDown(KeyCode.N))
         {
@@ -85,8 +89,8 @@ public class BattleManager : MonoBehaviour
     public void StartBatttle(string[] enemiesToSpawn)
     {
 
-        Player.instance.transform.position = Vector2.zero;
-        //Player.instance.transform.position = transform.position;
+        //Player.instance.transform.position = Vector2.zero;
+        Player.instance.transform.position = transform.position;
 
         Prepare();
         AddPlayers();
@@ -246,7 +250,7 @@ public class BattleManager : MonoBehaviour
     void EnemyAttack()
     {
         List<int> players = new List<int>();
-
+     
         for (int i = 0; i< activeCharacters.Count; i++)
         {
             if(activeCharacters[i].IsPlayer() && activeCharacters[i].currentHP > 0)
@@ -254,9 +258,11 @@ public class BattleManager : MonoBehaviour
                 players.Add(i);
             }
         }
-        int selectPlayer = players[Random.Range(0, players.Count)];
 
+        int selectPlayer = players[Random.Range(0, players.Count)];
         int selectedAttack = Random.Range(0, activeCharacters[currentTurn].AttacksAvailable().Length);
+
+        int movePower = 0;
 
         for(int i= 0; i < battleList.Length; i++)
         {
@@ -265,34 +271,47 @@ public class BattleManager : MonoBehaviour
             {
               
                 Instantiate(battleList[i].effect, activeCharacters[selectPlayer].transform.position, activeCharacters[selectPlayer].transform.rotation);
+
+                movePower = battleList[i].power;
             }
 
-
+           
         }
 
+        Instantiate(selector, activeCharacters[currentTurn].transform.position, activeCharacters[currentTurn].transform.rotation);
 
+        DealDamage(selectPlayer, movePower);
        
-
 
     }
 
     private void DealDamage(int selectedCharacter, int movePower)
     {
         float attackPower = activeCharacters[currentTurn].dexterity + activeCharacters[currentTurn].weaponPower;
-        float defenseAmount = activeCharacters[selectedCharacter ].defense + activeCharacters[selectedCharacter].armorValue;
+        float defenseAmount = activeCharacters[selectedCharacter].defense + activeCharacters[selectedCharacter].armorValue;
 
         float damageAmount = (attackPower / defenseAmount) * movePower * Random.Range(.9f, 1.3f);
         int damageToGive = (int)damageAmount;
 
-      //  damageToGive = CalculateCritical(damageToGive);
+       damageToGive = CalculateCritical(damageToGive);
 
         Debug.Log(activeCharacters[currentTurn].characterName + "Just Dealt" + damageAmount + "(" + damageToGive + ") to " + activeCharacters[selectedCharacter]);
 
         activeCharacters[selectedCharacter].TakeDamage(damageToGive);
+        CharacterDamageUI damageUI = Instantiate(damageText1, activeCharacters[selectedCharacter].transform.position, activeCharacters[selectedCharacter].transform.rotation);
+
+        damageUI.SetDamage(damageToGive);
     }
 
-    //private int CalculateCritical(int damage)
-    //{
-        
-    //}
+    private int CalculateCritical(int damage)
+    {
+        if(Random.value <=0.1f)
+        {
+            Debug.Log("CRIT!" + (damage * 2));
+
+            return (damage * 2);
+        }
+
+        return damage;
+    }
 }

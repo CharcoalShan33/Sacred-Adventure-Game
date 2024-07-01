@@ -8,10 +8,11 @@ public class UI_Manager : MonoBehaviour
 {
     [SerializeField] Image fadeImage;
     [SerializeField] GameObject menu;
-    [SerializeField] TextMeshProUGUI[] nameText, healthText, manaText, lvlText, xpText;
+    [SerializeField] TextMeshProUGUI[] nameText, healthText, manaText, lvlText, totalRequiredXp;
     [SerializeField] Slider[] xpSlider;
     [SerializeField] GameObject[] characterPanel;
      PlayerStats[] players;
+    [SerializeField] Image[] characterImage;
 
     public static UI_Manager instance;
     // Start is called before the first frame update
@@ -61,12 +62,13 @@ public class UI_Manager : MonoBehaviour
             characterPanel[i].SetActive(true);
 
             nameText[i].text = players[i].playerName;
-
+            characterImage[i].sprite = players[i].character;
             healthText[i].text = players[i].currentHP + "/" + players[i].maxHP;
             manaText[i].text = players[i].currentMana + "/" + players[i].maxMana;
             lvlText[i].text = players[i].playerLevel.ToString();
-            xpText[i].text = players[i].currentXP.ToString();
-
+            totalRequiredXp[i].text = players[i].totalXP.ToString();
+            xpSlider[i].maxValue = players[i].xpForEachLevel[players[i].playerLevel];
+            xpSlider[i].value = players[i].totalXP;
             //players[i].ToString().
 
         }

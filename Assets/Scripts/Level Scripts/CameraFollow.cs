@@ -33,18 +33,18 @@ public class CameraFollow : MonoBehaviour
         {
 
 
-
-
             //SceneManager.sceneLoaded -= OnSceneLoaded;
-            // virtualCam.enabled = true;
+            virtualCam.enabled = false;
             // virtualCam.Follow = playTarget.transform;
             //virtualCam.Follow = null;
-            //playTarget.enabled = false;
+            playTarget.enabled = false;
 
-            virtualCam.gameObject.SetActive(false);
+            //virtualCam.gameObject.SetActive(false);
         }
         else
         {
+            playTarget.enabled = true;
+            virtualCam.enabled = true;
             virtualCam.gameObject.SetActive(true);
         }
     }

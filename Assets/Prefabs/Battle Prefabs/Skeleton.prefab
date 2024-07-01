@@ -53,7 +53,7 @@ MonoBehaviour:
   - Hack
   - EnergyBall
   - Strike
-  - Strike
+  - Spikes
   - Lightning
   - Fireball
   currentHP: 300
@@ -61,11 +61,12 @@ MonoBehaviour:
   currentMana: 60
   maxMana: 100
   speed: 30
-  strength: 20
-  defense: 20
-  magicRes: 55
-  magicAttack: 45
-  weaponPower: 55
+  strength: 30
+  defense: 35
+  magicRes: 15
+  magicAttack: 15
+  dexterity: 20
+  weaponPower: 30
   armorValue: 25
   isDead: 0
 --- !u!1 &4725111276715082836

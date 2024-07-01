@@ -109,7 +109,7 @@ MonoBehaviour:
   - Lightning
   - Spikes
   currentHP: 200
-  maxHp: 200
+  maxHp: 250
   currentMana: 25
   maxMana: 30
   speed: 25
@@ -117,6 +117,7 @@ MonoBehaviour:
   defense: 30
   magicRes: 10
   magicAttack: 15
-  weaponPower: 70
-  armorValue: 40
+  dexterity: 30
+  weaponPower: 50
+  armorValue: 30
   isDead: 0
