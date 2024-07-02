@@ -72,7 +72,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -211832909
-  m_SortingLayer: 10
+  m_SortingLayer: 11
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 32c4020bf4c3a4dbf85cb99a64c475ef, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -190,18 +190,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 380331f3d58634525ab2011c2c26837b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerName: 
-  maxLevel: 100
+  playerName: Sir Knight
   playerLevel: 1
-  currentXP: 0
+  totalXP: 36
   xpForEachLevel: 
-  baseLevelXP: 100
-  maxHP: 200
-  currentHP: 200
-  maxMana: 40
-  currentMana: 35
+  character: {fileID: 21300000, guid: 32c4020bf4c3a4dbf85cb99a64c475ef, type: 3}
+  maxHP: 350
+  currentHP: 350
+  maxMana: 45
+  currentMana: 45
   defense: 45
-  physAttack: 40
-  magAttack: 20
-  magicRES: 20
+  physAttack: 42
+  magAttack: 30
+  magicRES: 35
   speed: 25
+  dexterity: 40

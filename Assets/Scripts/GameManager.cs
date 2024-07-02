@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
 
     public bool isBattleActive;
 
+    public int money;
+
     // Start is called before the first frame update
     void Start()
     {

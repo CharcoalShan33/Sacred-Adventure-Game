@@ -8,14 +8,15 @@ public class PlayerStats : MonoBehaviour
 
     public string playerName;
 
-    [SerializeField] int maxLevel = 100;
+    int maxLevel = 100;
     public int playerLevel = 1;
     public int totalXP; // total xp gained or the current amount of exp held
-    [SerializeField] int[] xpForEachLevel; /// <summary>
+    public int[] xpForEachLevel; /// <summary>
         // level xp required;
     /// </summary>
-    [SerializeField] int baseLevelXP = 100;
+     int baseLevelXP = 100;
 
+    public Sprite character;
     public int maxHP = 100;
     public int currentHP;
     public  int maxMana = 30;
@@ -68,12 +69,12 @@ public class PlayerStats : MonoBehaviour
 
     public void AddExp(int amount)
     {
-        currentXP += amount; // current amount of xp == current amount + xp required.
+        totalXP += amount; // current amount of xp == current amount + xp required.
         // if current xp is greater than the xp required for each level
-        if (currentXP > xpForEachLevel[playerLevel])
+        if (totalXP > xpForEachLevel[playerLevel])
         {
             // we subtract the remainer for the next level.
-            currentXP -= xpForEachLevel[playerLevel];
+            totalXP -= xpForEachLevel[playerLevel];
             // raise level by one.
             playerLevel++;
 

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Cinemachine;
+using UnityEngine.UI;
+using TMPro;
 
 public class BattleManager : MonoBehaviour
 {
@@ -28,9 +30,17 @@ public class BattleManager : MonoBehaviour
 
     [SerializeField] CharacterDamageUI damageText1;
     //CinemachineVirtualCamera cam;
-
-
     [SerializeField] GameObject selector;
+
+    [SerializeField] TextMeshProUGUI[] playerNames;
+    [SerializeField]
+    TextMeshProUGUI[] playerHealth;
+    [SerializeField]
+    TextMeshProUGUI[] playerMana;
+
+    [SerializeField] GameObject[] playerBattleStats;
+
+    // [SerializeField] Slider[] manaSlider, hpSlider;
     // Start is called before the first frame update
     void Start()
     {
@@ -45,16 +55,22 @@ public class BattleManager : MonoBehaviour
 
         //cam = GameObject.FindGameObjectWithTag("FollowCamera").GetComponent<CinemachineVirtualCamera>();
         DontDestroyOnLoad(gameObject);
+        uiHolder.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        if ( Input.GetKeyDown(KeyCode.I)  )
+        if (Input.GetKeyDown(KeyCode.I))
         {
-            
+            //uiHolder.SetActive(true);
             StartBatttle(new string[] { "Skeleton", "Orc", "MagicSkeleton" });
+            //GameManager.instance.gameMenuOpen = false;
+        }
+        else
+        {
+            uiHolder.SetActive(false);
         }
         if (Input.GetKeyDown(KeyCode.N))
         {
@@ -94,11 +110,14 @@ public class BattleManager : MonoBehaviour
 
         Prepare();
         AddPlayers();
-
+        uiHolder.SetActive(true);
         AddEnemies(enemiesToSpawn);
         waitingForTurn = true;
         currentTurn = 0;
 
+        UpdatePlayerStats();
+
+        //GameManager.instance.gameMenuOpen = false;
 
     }
 
@@ -189,6 +208,7 @@ public class BattleManager : MonoBehaviour
             waitingForTurn = true;
 
             UpdateBattle();
+            UpdatePlayerStats();
         }
 
     }
@@ -220,7 +240,7 @@ public class BattleManager : MonoBehaviour
                 }
             }
         }
-        if ( isPlayerDead || isEnemyDead)
+        if (isPlayerDead || isEnemyDead)
         {
             if (isEnemyDead)
             {
@@ -238,6 +258,19 @@ public class BattleManager : MonoBehaviour
 
         }
 
+
+        else
+        {
+            while (activeCharacters[currentTurn].currentHP == 0)
+            {
+                currentTurn++;
+                if (currentTurn >= activeCharacters.Count)
+                {
+                    currentTurn = 0;
+                }
+            }
+        }
+
     }
     public IEnumerator EnemyMove()
     {
@@ -246,14 +279,15 @@ public class BattleManager : MonoBehaviour
         EnemyAttack();
         yield return new WaitForSeconds(1f);
         NextTurn();
+
     }
     void EnemyAttack()
     {
         List<int> players = new List<int>();
-     
-        for (int i = 0; i< activeCharacters.Count; i++)
+
+        for (int i = 0; i < activeCharacters.Count; i++)
         {
-            if(activeCharacters[i].IsPlayer() && activeCharacters[i].currentHP > 0)
+            if (activeCharacters[i].IsPlayer() && activeCharacters[i].currentHP > 0)
             {
                 players.Add(i);
             }
@@ -264,24 +298,24 @@ public class BattleManager : MonoBehaviour
 
         int movePower = 0;
 
-        for(int i= 0; i < battleList.Length; i++)
+        for (int i = 0; i < battleList.Length; i++)
         {
-       
+
             if (battleList[i].moveName == activeCharacters[currentTurn].AttacksAvailable()[selectedAttack])
             {
-              
-                Instantiate(battleList[i].effect, activeCharacters[selectPlayer].transform.position, activeCharacters[selectPlayer].transform.rotation);
 
-                movePower = battleList[i].power;
+                GetMovePowerEffect(selectPlayer, movePower);
             }
 
-           
+
         }
 
         Instantiate(selector, activeCharacters[currentTurn].transform.position, activeCharacters[currentTurn].transform.rotation);
 
         DealDamage(selectPlayer, movePower);
-       
+
+        UpdatePlayerStats();
+
 
     }
 
@@ -293,7 +327,7 @@ public class BattleManager : MonoBehaviour
         float damageAmount = (attackPower / defenseAmount) * movePower * Random.Range(.9f, 1.3f);
         int damageToGive = (int)damageAmount;
 
-       damageToGive = CalculateCritical(damageToGive);
+        damageToGive = CalculateCritical(damageToGive);
 
         Debug.Log(activeCharacters[currentTurn].characterName + "Just Dealt" + damageAmount + "(" + damageToGive + ") to " + activeCharacters[selectedCharacter]);
 
@@ -305,7 +339,7 @@ public class BattleManager : MonoBehaviour
 
     private int CalculateCritical(int damage)
     {
-        if(Random.value <=0.1f)
+        if (Random.value <= 0.1f)
         {
             Debug.Log("CRIT!" + (damage * 2));
 
@@ -313,5 +347,69 @@ public class BattleManager : MonoBehaviour
         }
 
         return damage;
+    }
+
+    public void UpdatePlayerStats()
+    {
+        for (int i = 0; i < playerNames.Length; i++)
+        {
+            if (activeCharacters.Count > i)
+            {
+                if (activeCharacters[i].IsPlayer())
+                {
+                    BattleCharacter playerData = activeCharacters[i];
+
+                    playerNames[i].text = playerData.characterName;
+
+                    playerHealth[i].text = playerData.currentHP.ToString() + "/" + playerData.maxHp.ToString();
+                    playerMana[i].text = playerData.currentMana.ToString() + "/" + playerData.maxMana.ToString();
+                    //playerHPSlider[i].maxValue = playerData.maxHP
+                    ///playerHPSlider[i].value = playerData.currentHP
+                    //playerMPSlider[i].maxValue = playerData.maxMana
+                    ///playerMPSlider[i].value = playerData.currentMana
+
+
+                }
+                else
+                {
+                    playerBattleStats[i].SetActive(false);
+                }
+            }
+            else
+            {
+                playerBattleStats[i].SetActive(false);
+            }
+
+
+        }
+    }
+
+    public void PlayerAttack(string moveName, int selectEnemy)
+    {
+        int movePower = 0;
+
+        for (int i = 0; i < battleList.Length; i++)
+        {
+            if (battleList[i].moveName == moveName)
+            {
+                movePower = GetMovePowerEffect(selectEnemy, i);
+            }
+        }
+    }
+
+    private int GetMovePowerEffect(int selectCharacter, int i)
+    {
+        int movePower;
+
+
+
+        Instantiate(battleList[i].effect, activeCharacters[selectCharacter].transform.position, activeCharacters[selectCharacter].transform.rotation);
+
+        movePower = battleList[i].power;
+
+        return movePower;
+
+
+
     }
 }

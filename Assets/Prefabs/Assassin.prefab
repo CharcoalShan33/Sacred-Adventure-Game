@@ -104,20 +104,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerName: ??????
-  maxLevel: 100
   playerLevel: 1
-  currentXP: 350
+  totalXP: 0
   xpForEachLevel: 
-  baseLevelXP: 100
-  maxHP: 100
-  currentHP: 0
-  maxMana: 35
-  currentMana: 0
+  character: {fileID: 21300000, guid: 4b32da05b45bf40b69f1d5154eac2d65, type: 3}
+  maxHP: 300
+  currentHP: 300
+  maxMana: 55
+  currentMana: 55
   defense: 15
-  physAttack: 20
-  magAttack: 25
-  magicRES: 35
+  physAttack: 25
+  magAttack: 35
+  magicRES: 30
   speed: 40
+  dexterity: 40
 --- !u!1 &1708430113681784183
 GameObject:
   m_ObjectHideFlags: 0
@@ -537,7 +537,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -211832909
-  m_SortingLayer: 10
+  m_SortingLayer: 11
   m_SortingOrder: -33
   m_Sprite: {fileID: 21300000, guid: 4b32da05b45bf40b69f1d5154eac2d65, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

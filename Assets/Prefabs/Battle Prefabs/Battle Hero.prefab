@@ -102,7 +102,7 @@ MonoBehaviour:
   attacksAvailable: []
   currentHP: 300
   maxHp: 300
-  currentMana: 50
+  currentMana: 80
   maxMana: 80
   speed: 30
   strength: 35
