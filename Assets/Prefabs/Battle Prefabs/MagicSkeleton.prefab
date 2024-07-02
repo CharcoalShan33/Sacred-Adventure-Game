@@ -142,7 +142,7 @@ MonoBehaviour:
   - Spikes
   currentHP: 300
   maxHp: 300
-  currentMana: 60
+  currentMana: 100
   maxMana: 100
   speed: 30
   strength: 20

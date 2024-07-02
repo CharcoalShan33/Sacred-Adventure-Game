@@ -72,7 +72,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1845003207
-  m_SortingLayer: 9
+  m_SortingLayer: 10
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 4064339b0596c4132a96863b81068eb8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -108,9 +108,9 @@ MonoBehaviour:
   - Strike
   - Lightning
   - Spikes
-  currentHP: 200
+  currentHP: 250
   maxHp: 250
-  currentMana: 25
+  currentMana: 30
   maxMana: 30
   speed: 25
   strength: 40

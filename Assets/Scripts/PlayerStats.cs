@@ -16,7 +16,8 @@ public class PlayerStats : MonoBehaviour
     /// </summary>
      int baseLevelXP = 100;
 
-    public Sprite character;
+    public Sprite character; // character image
+
     public int maxHP = 100;
     public int currentHP;
     public  int maxMana = 30;

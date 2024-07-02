@@ -71,7 +71,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -211832909
-  m_SortingLayer: 10
+  m_SortingLayer: 11
   m_SortingOrder: 33
   m_Sprite: {fileID: 21300000, guid: 571848c2369114264b2a49e9812fc9d3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -132,9 +132,9 @@ MonoBehaviour:
   isPlayer: 1
   characterName: Crow
   attacksAvailable: []
-  currentHP: 0
+  currentHP: 300
   maxHp: 300
-  currentMana: 30
+  currentMana: 55
   maxMana: 55
   speed: 45
   strength: 25
