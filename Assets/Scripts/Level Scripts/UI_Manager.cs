@@ -26,6 +26,8 @@ public class UI_Manager : MonoBehaviour
 
     public TextMeshProUGUI itemName, itemDescription;
 
+    public ItemManager activeItem;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -143,6 +145,11 @@ public class UI_Manager : MonoBehaviour
 
     }
 
+
+    public void Discard()
+    {
+        print("Discard " + itemName);
+    }
     public void Quit()
     {
         Application.Quit();

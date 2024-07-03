@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerStats : MonoBehaviour
 {
 
-
+    public static PlayerStats instance;
     public string playerName;
 
     int maxLevel = 100;
@@ -32,6 +32,7 @@ public class PlayerStats : MonoBehaviour
 
 
     public int dexterity; //-- ability to hold a weapon
+
 
     [ContextMenu("Level Up")]
     private void Start()

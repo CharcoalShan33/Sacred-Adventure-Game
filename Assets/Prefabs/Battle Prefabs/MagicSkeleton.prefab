@@ -130,7 +130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayer: 0
-  characterName: Skelet
+  characterName: Magic Skeleton
   attacksAvailable:
   - Void
   - Strike
