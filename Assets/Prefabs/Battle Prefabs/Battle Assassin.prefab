@@ -130,12 +130,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayer: 1
-  characterName: Battle Assassin
+  characterName: Crow
   attacksAvailable:
-  - Slash Attack
-  - Attack
+  - Dark Void
+  - Earth Spikes
+  - Energy Ball
+  - Fire Ball
+  - Lightning Bolt
   - Sun Strike
-  currentHP: 300
+  currentHP: 257
   maxHp: 300
   currentMana: 55
   maxMana: 55

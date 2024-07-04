@@ -210,11 +210,11 @@ public class BattleManager : MonoBehaviour
         currentTurn++;
         if (currentTurn >= activeCharacters.Count)
         {
-            currentTurn = 0;     
+            currentTurn = 0;
         }
         waitingForTurn = true;
         UpdateBattle();
-       UpdatePlayerStats();
+        UpdatePlayerStats();
     }
 
     void UpdateBattle()
@@ -308,9 +308,9 @@ public class BattleManager : MonoBehaviour
             if (battleList[i].moveName == activeCharacters[currentTurn].AttacksAvailable()[selectedAttack])
             {
 
-              //  Instantiate(battleList[i].effect, activeCharacters[selectPlayer].transform.position, activeCharacters[selectPlayer].transform.rotation);
+                //  Instantiate(battleList[i].effect, activeCharacters[selectPlayer].transform.position, activeCharacters[selectPlayer].transform.rotation);
 
-               // movePower = battleList[i].power;
+                // movePower = battleList[i].power;
                 movePower = GetEffectandInstantiate(selectPlayer, i);
             }
 
@@ -406,14 +406,14 @@ public class BattleManager : MonoBehaviour
 
         for (int i = 0; i < battleList.Length; i++)
         {
-           
+
 
             if (battleList[i].moveName == moveName)
             {
                 //Instantiate(battleList[i].effect, activeCharacters[selectEnemy].transform.position, activeCharacters[selectEnemy].transform.rotation);
 
                 //movePower = battleList[i].power;
-                 movePower = GetEffectandInstantiate(selectEnemy, i);
+                movePower = GetEffectandInstantiate(selectEnemy, i);
             }
         }
 
@@ -422,28 +422,29 @@ public class BattleManager : MonoBehaviour
         DealDamage(selectEnemy, movePower);
         uiHolder.SetActive(false);
         targetPanel.SetActive(false);
-        NextTurn();
         
+        NextTurn();
+
     }
- 
+
 
     public void OpenTargetMenu(string moveName)
     {
         targetPanel.SetActive(true);
 
         List<int> Enemies = new List<int>();
-        for(int i=0;i < activeCharacters.Count; i++)
+        for (int i = 0; i < activeCharacters.Count; i++)
         {
-            if(!activeCharacters[i].IsPlayer())
+            if (!activeCharacters[i].IsPlayer())
             {
                 Enemies.Add(i);
             }
         }
 
-        
-      for(int i = 0; i< targetButtons.Length; i++)
+
+        for (int i = 0; i < targetButtons.Length; i++)
         {
-            if(Enemies.Count > 1)
+            if (Enemies.Count > 1)
             {
                 targetButtons[i].gameObject.SetActive(true);
                 targetButtons[i].moveName = moveName;
@@ -456,8 +457,8 @@ public class BattleManager : MonoBehaviour
                 targetButtons[i].gameObject.SetActive(false);
             }
         }
-        
-        
+
+
     }
 
     private int GetEffectandInstantiate(int characterSelect, int i)
@@ -469,13 +470,13 @@ public class BattleManager : MonoBehaviour
         return movePower;
     }
 
-    public void OpenMagicMenu(string spellName)
+    public void OpenMagicMenu()
     {
         magicMenu.SetActive(true);
 
-       for(int i = 0; i< spellButtons.Length; i++)
+        for (int i = 0; i < spellButtons.Length; i++)
         {
-            if (activeCharacters[currentTurn].AttacksAvailable().Length > 1)
+            if (activeCharacters[currentTurn].AttacksAvailable().Length > i)
             {
                 spellButtons[i].gameObject.SetActive(true);
                 spellButtons[i].spellName = GetBattleCharacter().AttacksAvailable()[i];
@@ -488,18 +489,19 @@ public class BattleManager : MonoBehaviour
                         spellButtons[i].spellCost = battleList[j].manaCost;
                         spellButtons[i].spellCostText.text = spellButtons[i].spellCost.ToString();
                     }
+                    
                 }
             }
             else
             {
-               spellButtons[i].gameObject.SetActive(false);
+                spellButtons[i].gameObject.SetActive(false);
             }
         }
     }
 
     public BattleCharacter GetBattleCharacter()
     {
-        
+
         return activeCharacters[currentTurn];
     }
 }

@@ -140,7 +140,7 @@ MonoBehaviour:
   - EnergyBall
   - Fireball
   - Spikes
-  currentHP: 300
+  currentHP: 243
   maxHp: 300
   currentMana: 100
   maxMana: 100

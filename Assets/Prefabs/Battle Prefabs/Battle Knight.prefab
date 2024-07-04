@@ -130,12 +130,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayer: 1
-  characterName: Battle Knight
+  characterName: Sir Night
   attacksAvailable:
-  - Attack
-  - Slash Attack
+  - Dark Void
+  - Earth Spikes
+  - Energy Ball
+  - Fire Ball
+  - Lightning Bolt
   - Sun Strike
-  currentHP: 350
+  currentHP: 203
   maxHp: 350
   currentMana: 45
   maxMana: 45
