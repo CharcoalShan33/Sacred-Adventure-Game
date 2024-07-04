@@ -38,12 +38,14 @@ public class BattleManager : MonoBehaviour
     TextMeshProUGUI[] playerHealth;
     [SerializeField]
     TextMeshProUGUI[] playerMana;
-
     [SerializeField] GameObject[] playerBattleStats;
 
-    [SerializeField] GameObject targetPanel;
 
+    [SerializeField] GameObject targetPanel;
     [SerializeField] TargetButtons[] targetButtons;
+
+    public GameObject magicMenu;
+    [SerializeField] MagicButtonFunctions[] spellButtons;
 
     // [SerializeField] Slider[] manaSlider, hpSlider;
     // Start is called before the first frame update
@@ -306,8 +308,9 @@ public class BattleManager : MonoBehaviour
             if (battleList[i].moveName == activeCharacters[currentTurn].AttacksAvailable()[selectedAttack])
             {
 
-                // Instantiate(battleList[i].effect, activeCharacters[selectPlayer].transform.position, activeCharacters[selectPlayer].transform.rotation);
+              //  Instantiate(battleList[i].effect, activeCharacters[selectPlayer].transform.position, activeCharacters[selectPlayer].transform.rotation);
 
+               // movePower = battleList[i].power;
                 movePower = GetEffectandInstantiate(selectPlayer, i);
             }
 
@@ -315,7 +318,7 @@ public class BattleManager : MonoBehaviour
         }
 
         InstantiateTarget();
-        //         Instantiate(selector, activeCharacters[currentTurn].transform.position, activeCharacters[currentTurn].transform.rotation);
+        //Instantiate(selector, activeCharacters[currentTurn].transform.position, activeCharacters[currentTurn].transform.rotation);
 
         DealDamage(selectPlayer, movePower);
 
@@ -342,9 +345,9 @@ public class BattleManager : MonoBehaviour
         Debug.Log(activeCharacters[currentTurn].characterName + " Just Dealt " + damageAmount + " ( " + damageToGive + " ) to " + activeCharacters[selectedCharacter]);
 
         activeCharacters[selectedCharacter].TakeDamage(damageToGive);
+        //CharacterDamageUI characterDamage  = Instantiate(damageText1, activeCharacters[selectedCharacter].transform.position, activeCharacters[selectedCharacter].transform.rotation);
+        //characterDamage.SetDamage(damageToGive);
         Instantiate(damageText1, activeCharacters[selectedCharacter].transform.position, activeCharacters[selectedCharacter].transform.rotation).SetDamage(damageToGive);
-
-        
 
         UpdatePlayerStats();
     }
@@ -403,25 +406,26 @@ public class BattleManager : MonoBehaviour
 
         for (int i = 0; i < battleList.Length; i++)
         {
-            //Instantiate(battleList[i].effect, activeCharacters[selectEnemy].transform.position, activeCharacters[selectEnemy].transform.rotation);
-
-            // movePower = battleList[i].power;
+           
 
             if (battleList[i].moveName == moveName)
             {
-                movePower = GetEffectandInstantiate(selectEnemy, i);
+                //Instantiate(battleList[i].effect, activeCharacters[selectEnemy].transform.position, activeCharacters[selectEnemy].transform.rotation);
+
+                //movePower = battleList[i].power;
+                 movePower = GetEffectandInstantiate(selectEnemy, i);
             }
         }
 
         InstantiateTarget();
         //Instantiate(selector, activeCharacters[currentTurn].transform.position, activeCharacters[currentTurn].transform.rotation);
         DealDamage(selectEnemy, movePower);
-
         uiHolder.SetActive(false);
         targetPanel.SetActive(false);
         NextTurn();
         
     }
+ 
 
     public void OpenTargetMenu(string moveName)
     {
@@ -463,5 +467,39 @@ public class BattleManager : MonoBehaviour
 
         movePower = battleList[i].power;
         return movePower;
+    }
+
+    public void OpenMagicMenu(string spellName)
+    {
+        magicMenu.SetActive(true);
+
+       for(int i = 0; i< spellButtons.Length; i++)
+        {
+            if (activeCharacters[currentTurn].AttacksAvailable().Length > 1)
+            {
+                spellButtons[i].gameObject.SetActive(true);
+                spellButtons[i].spellName = GetBattleCharacter().AttacksAvailable()[i];
+                spellButtons[i].spellNameText.text = spellButtons[i].spellName;
+
+                for (int j = 0; j < battleList.Length; j++)
+                {
+                    if (battleList[j].moveName == spellButtons[i].spellName)
+                    {
+                        spellButtons[i].spellCost = battleList[j].manaCost;
+                        spellButtons[i].spellCostText.text = spellButtons[i].spellCost.ToString();
+                    }
+                }
+            }
+            else
+            {
+               spellButtons[i].gameObject.SetActive(false);
+            }
+        }
+    }
+
+    public BattleCharacter GetBattleCharacter()
+    {
+        
+        return activeCharacters[currentTurn];
     }
 }

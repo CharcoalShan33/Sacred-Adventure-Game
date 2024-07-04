@@ -6,18 +6,18 @@ using TMPro;
 public class CharacterDamageUI : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI damageText;
-    [SerializeField] float lifetime = 1f, moveSpeed = 1f; float textVibrations = .04f;
+    [SerializeField] float lifetime = 1f, moveSpeed = 1f; float textVibrations = .4f;
     // Start is called before the first frame update
     void Start()
     {
-        
+        Destroy(gameObject, lifetime);
+        transform.position += new Vector3(0, moveSpeed * Time.deltaTime, 0f);
     }
 
     // Update is called once per frame
     void Update()
     {
-        Destroy(gameObject, lifetime);
-        transform.position += new Vector3(0, moveSpeed * Time.deltaTime, 0f);
+       
         
     }
 

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2859999845693630368}
   - component: {fileID: 8659240666279964483}
   - component: {fileID: 3670183540961358696}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Orc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 8317284105422485488}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.985428, y: -3.1280727, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -71,9 +71,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1845003207
-  m_SortingLayer: 10
-  m_SortingOrder: 0
+  m_SortingLayerID: 1601194253
+  m_SortingLayer: 2
+  m_SortingOrder: 33
   m_Sprite: {fileID: 21300000, guid: 4064339b0596c4132a96863b81068eb8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -100,14 +100,14 @@ MonoBehaviour:
   isPlayer: 0
   characterName: Orc
   attacksAvailable:
-  - Void
-  - Slash
-  - EnergyBall
-  - Hack
-  - Fireball
   - Strike
-  - Lightning
+  - EnergyBall
+  - Fireball
+  - Hack
+  - Slash
+  - Void
   - Spikes
+  - Lightning
   currentHP: 250
   maxHp: 250
   currentMana: 30

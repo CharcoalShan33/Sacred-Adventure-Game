@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5356716256365650953}
   - component: {fileID: 3460401812744495070}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: Graphics
   m_TagString: Hero
   m_Icon: {fileID: 0}
@@ -70,8 +70,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -211832909
-  m_SortingLayer: 11
+  m_SortingLayerID: 1601194253
+  m_SortingLayer: 2
   m_SortingOrder: 33
   m_Sprite: {fileID: 21300000, guid: 571848c2369114264b2a49e9812fc9d3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8169414044893534097}
   - component: {fileID: 6771757336993981906}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: Battle Assassin
   m_TagString: Hero
   m_Icon: {fileID: 0}
@@ -110,7 +110,7 @@ Transform:
   m_GameObject: {fileID: 7509748186421572621}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -57.1, y: 24.7, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5356716256365650953}
@@ -130,8 +130,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayer: 1
-  characterName: Crow
-  attacksAvailable: []
+  characterName: Battle Assassin
+  attacksAvailable:
+  - Slash Attack
+  - Attack
+  - Sun Strike
   currentHP: 300
   maxHp: 300
   currentMana: 55
@@ -141,7 +144,7 @@ MonoBehaviour:
   defense: 15
   magicRes: 30
   magicAttack: 35
-  dexterity: 30
+  dexterity: 40
   weaponPower: 50
   armorValue: 30
   isDead: 0
