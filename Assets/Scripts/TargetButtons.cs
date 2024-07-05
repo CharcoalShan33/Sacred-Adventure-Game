@@ -16,6 +16,6 @@ public class TargetButtons : MonoBehaviour
 
     public void Press()
     {
-        BattleManager.instance.OpenTargetMenu(moveName);
+        BattleManager.instance.PlayerAttack(moveName, activeBattleTarget);
     }
 }

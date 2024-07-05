@@ -10,6 +10,7 @@ public class BattleManager : MonoBehaviour
 {
     public static BattleManager instance;
 
+    [Header("Battle Elements")]
     //[SerializeField] GameObject battleBG;
     [SerializeField] int battleBG;
 
@@ -32,6 +33,8 @@ public class BattleManager : MonoBehaviour
     //CinemachineVirtualCamera cam;
     [SerializeField] GameObject selector;
 
+    [SerializeField] int chance;
+
     [Header("Player Statuses")]
     [SerializeField] TextMeshProUGUI[] playerNames;
     [SerializeField]
@@ -40,12 +43,15 @@ public class BattleManager : MonoBehaviour
     TextMeshProUGUI[] playerMana;
     [SerializeField] GameObject[] playerBattleStats;
 
+    [Header("Panels and Buttons")]
+    [SerializeField] GameObject battlePanel;
 
     [SerializeField] GameObject targetPanel;
     [SerializeField] TargetButtons[] targetButtons;
-
     public GameObject magicMenu;
     [SerializeField] MagicButtonFunctions[] spellButtons;
+
+    [SerializeField] Button attack, magic, flee, ability, useItem;
 
     // [SerializeField] Slider[] manaSlider, hpSlider;
     // Start is called before the first frame update
@@ -401,6 +407,10 @@ public class BattleManager : MonoBehaviour
 
     public void PlayerAttack(string moveName, int selectEnemy)
     {
+        attack.interactable = true;
+        flee.interactable = false;
+        useItem.interactable = false;
+        magic.interactable = false;
         //int selectEnemy = 3;
         int movePower = 0;
 
@@ -422,8 +432,8 @@ public class BattleManager : MonoBehaviour
         DealDamage(selectEnemy, movePower);
         uiHolder.SetActive(false);
         targetPanel.SetActive(false);
-        
         NextTurn();
+       
 
     }
 
@@ -444,7 +454,7 @@ public class BattleManager : MonoBehaviour
 
         for (int i = 0; i < targetButtons.Length; i++)
         {
-            if (Enemies.Count > 1)
+            if (Enemies.Count > i)
             {
                 targetButtons[i].gameObject.SetActive(true);
                 targetButtons[i].moveName = moveName;
@@ -474,6 +484,9 @@ public class BattleManager : MonoBehaviour
     {
         magicMenu.SetActive(true);
 
+        attack.interactable = false;
+        flee.interactable = false;
+        useItem.interactable = false;
         for (int i = 0; i < spellButtons.Length; i++)
         {
             if (activeCharacters[currentTurn].AttacksAvailable().Length > i)
@@ -493,12 +506,31 @@ public class BattleManager : MonoBehaviour
                 }
             }
             else
-            {
+            { 
                 spellButtons[i].gameObject.SetActive(false);
             }
         }
     }
+    public void Run()
+    {
+        chance = Random.Range(1, 100);
 
+
+        if( Random.value > chance )
+        {
+            GameManager.instance.isBattleActive = false;
+           
+            battleActive = false;
+             SceneManager.LoadScene(2);
+            Player.instance.gameObject.SetActive(true);
+        }
+        else
+        {
+            NextTurn();
+            print("No escaping for you!");
+        }
+
+    }
     public BattleCharacter GetBattleCharacter()
     {
 

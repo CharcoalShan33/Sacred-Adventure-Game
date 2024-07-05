@@ -132,16 +132,18 @@ MonoBehaviour:
   isPlayer: 1
   characterName: Crow
   attacksAvailable:
-  - Dark Void
-  - Earth Spikes
-  - Energy Ball
-  - Fire Ball
-  - Lightning Bolt
-  - Sun Strike
-  currentHP: 257
+  - Void
+  - Spikes
+  - EnergyBall
+  - Fireball
+  - Lightning
+  - Strike
+  - Hack
+  - Slash
+  currentHP: 300
   maxHp: 300
-  currentMana: 55
-  maxMana: 55
+  currentMana: 85
+  maxMana: 85
   speed: 45
   strength: 25
   defense: 15

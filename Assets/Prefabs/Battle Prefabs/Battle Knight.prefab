@@ -132,16 +132,18 @@ MonoBehaviour:
   isPlayer: 1
   characterName: Sir Night
   attacksAvailable:
-  - Dark Void
-  - Earth Spikes
-  - Energy Ball
-  - Fire Ball
-  - Lightning Bolt
-  - Sun Strike
-  currentHP: 203
-  maxHp: 350
-  currentMana: 45
-  maxMana: 45
+  - Void
+  - Spikes
+  - EnergyBall
+  - Fireball
+  - Lightning
+  - Strike
+  - Hack
+  - Slash
+  currentHP: 450
+  maxHp: 450
+  currentMana: 80
+  maxMana: 80
   speed: 25
   strength: 42
   defense: 45

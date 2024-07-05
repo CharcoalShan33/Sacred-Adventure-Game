@@ -133,14 +133,14 @@ MonoBehaviour:
   characterName: Magic Skeleton
   attacksAvailable:
   - Void
-  - Strike
+  - Spikes
+  - Lightning
   - Hack
   - Slash
-  - Lightning
-  - EnergyBall
   - Fireball
-  - Spikes
-  currentHP: 243
+  - EnergyBall
+  - Strike
+  currentHP: 300
   maxHp: 300
   currentMana: 100
   maxMana: 100

@@ -100,14 +100,16 @@ MonoBehaviour:
   isPlayer: 1
   characterName: Ledger
   attacksAvailable:
-  - Dark Void
-  - Earth Spikes
-  - Energy Ball
-  - Fire Ball
-  - Lightning Bolt
-  - Sun Strike
-  currentHP: 257
-  maxHp: 300
+  - Void
+  - Spikes
+  - EnergyBall
+  - Fireball
+  - Lightning
+  - Strike
+  - Hack
+  - Slash
+  currentHP: 350
+  maxHp: 350
   currentMana: 80
   maxMana: 80
   speed: 30

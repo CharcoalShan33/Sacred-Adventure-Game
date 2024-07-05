@@ -123,7 +123,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &286628812
+--- !u!1001 &374657706
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -184,7 +184,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5124723689445912661, guid: 375d8d2eb7d994aab9f8d656e1397148, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5124723689445912661, guid: 375d8d2eb7d994aab9f8d656e1397148, type: 3}
       propertyPath: m_LocalPosition.x
@@ -366,7 +366,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &19516549433415005
 Transform:

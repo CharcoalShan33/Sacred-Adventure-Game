@@ -19,11 +19,15 @@ public class MagicButtonFunctions : MonoBehaviour
         if (BattleManager.instance.GetBattleCharacter().currentMana >= spellCost)
         {
             BattleManager.instance.magicMenu.SetActive(false);
-            BattleManager.instance.OpenMagicMenu();
+            BattleManager.instance.OpenTargetMenu(spellName);
             BattleManager.instance.GetBattleCharacter().currentMana -= spellCost;
 
         }
-        BattleManager.instance.OpenTargetMenu(spellName);
+        else
+        {
+            BattleManager.instance.magicMenu.SetActive(false);
+        }
+       
     }
    
 }
