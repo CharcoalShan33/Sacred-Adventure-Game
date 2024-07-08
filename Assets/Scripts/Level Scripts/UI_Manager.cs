@@ -8,13 +8,15 @@ public class UI_Manager : MonoBehaviour
 {
     [SerializeField] Image fadeImage;
     [SerializeField] GameObject menu;
-    PlayerStats[] players;
+   
+
+
     [Header("Character Information")]
     [SerializeField] TextMeshProUGUI[] nameText, healthText, manaText, lvlText, totalRequiredXp;
     [SerializeField] Slider[] xpSlider;
     [SerializeField] GameObject[] characterPanel;
     [SerializeField] Image[] characterImages;
-
+      PlayerStats[] players;
 
     [SerializeField] GameObject[] statsButton;
     [SerializeField] TextMeshProUGUI statName, statHP, statMP, statMAG, statDEX, statATK, statDEF, StatMRES;
@@ -27,6 +29,8 @@ public class UI_Manager : MonoBehaviour
     public TextMeshProUGUI itemName, itemDescription;
 
     public ItemManager activeItem;
+
+    [SerializeField] GameObject[] windows;
 
     // Start is called before the first frame update
     void Awake()
@@ -51,9 +55,9 @@ public class UI_Manager : MonoBehaviour
         {
             if (menu.activeInHierarchy)
             {
-
-                menu.SetActive(false);
-                GameManager.instance.gameMenuOpen = false;
+                CloseMenu();
+                //menu.SetActive(false);
+                //GameManager.instance.gameMenuOpen = false;
 
             }
             else
@@ -70,6 +74,7 @@ public class UI_Manager : MonoBehaviour
 
     public void UpdateStats()
     {
+        //// the character Information status panels
         players = GameManager.instance.GetPlayerStats();
         for (int i = 0; i < players.Length; i++)
         {
@@ -91,6 +96,7 @@ public class UI_Manager : MonoBehaviour
 
     public void UpdateStatusMenu(int playerSelectedNum)
     {
+        //The full status of the player
         PlayerStats playerSelected = players[playerSelectedNum];
         statName.text = playerSelected.playerName;
         statHP.text = playerSelected.currentHP.ToString() + " / " + playerSelected.maxHP.ToString();
@@ -104,7 +110,7 @@ public class UI_Manager : MonoBehaviour
 
 
     }
-    public void StatMenu()
+    public void UpdateStatMenu()
     {
         for (int i = 0; i < players.Length; i++)
         {
@@ -114,6 +120,38 @@ public class UI_Manager : MonoBehaviour
         UpdateStatusMenu(0);
     }
 
+
+   public void ToggleWindows( int window)
+    {
+        for(int i = 0; i< windows.Length; i++)
+        {
+            if(i == window)
+            {
+                windows[i].SetActive(!windows[i].activeInHierarchy);
+            }
+            else
+            {
+                windows[i].SetActive(false);
+            }
+        }
+    }
+    public void OpenMenu()
+    {
+
+    }
+
+    public void CloseMenu()
+    {
+        for (int i = 0; i < windows.Length; i++)
+        {
+
+            windows[i].SetActive(false);
+        }
+
+
+        menu.SetActive(false);
+        GameManager.instance.gameMenuOpen = false;
+    }
     void UpdateItems() // inventory.
     {
        

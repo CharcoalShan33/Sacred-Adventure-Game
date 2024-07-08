@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &154527593546059897
+--- !u!1 &2678363289110510220
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,37 +8,38 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7157824453678623861}
-  - component: {fileID: 1436481670664056491}
-  m_Layer: 11
-  m_Name: Graphics
+  - component: {fileID: 1357258949960226489}
+  - component: {fileID: 1325602722566422781}
+  - component: {fileID: 2498068114619522501}
+  m_Layer: 0
+  m_Name: Battle Knight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7157824453678623861
+--- !u!4 &1357258949960226489
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 154527593546059897}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_GameObject: {fileID: 2678363289110510220}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.73, y: 0, z: 0}
+  m_LocalScale: {x: 3, y: 3, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8398252678270975155}
+  m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &1436481670664056491
+--- !u!212 &1325602722566422781
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 154527593546059897}
+  m_GameObject: {fileID: 2678363289110510220}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -72,58 +73,25 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1601194253
   m_SortingLayer: 2
-  m_SortingOrder: 33
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: a843e86279c8c4ef4a4b590f7ebf785b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 7.98, y: 7.32}
+  m_Size: {x: 3.1171875, y: 2.859375}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &6808807878311767315
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8398252678270975155}
-  - component: {fileID: -7170064352133315893}
-  m_Layer: 11
-  m_Name: Battle Knight
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8398252678270975155
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6808807878311767315}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.029422, y: -0.3332783, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 7157824453678623861}
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-7170064352133315893
+--- !u!114 &2498068114619522501
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6808807878311767315}
+  m_GameObject: {fileID: 2678363289110510220}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0328450b3353a470e83c5598ba4d7511, type: 3}
@@ -131,25 +99,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPlayer: 1
   characterName: Sir Night
+  isAbsorbable: 0
   attacksAvailable:
-  - Void
-  - Spikes
-  - EnergyBall
-  - Fireball
-  - Lightning
-  - Strike
-  - Hack
   - Slash
+  - Hack
+  - Spikes
   currentHP: 450
   maxHp: 450
   currentMana: 80
   maxMana: 80
   speed: 25
-  strength: 42
+  strength: 40
   defense: 45
-  magicRes: 35
-  magicAttack: 30
+  magicRes: 25
+  magicAttack: 25
   dexterity: 40
-  weaponPower: 75
-  armorValue: 75
+  weaponPower: 40
+  armorValue: 50
   isDead: 0

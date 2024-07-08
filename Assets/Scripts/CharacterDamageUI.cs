@@ -10,14 +10,14 @@ public class CharacterDamageUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Destroy(gameObject, lifetime);
-        transform.position += new Vector3(0, moveSpeed * Time.deltaTime, 0f);
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-       
+       Destroy(gameObject, lifetime);
+        transform.position += new Vector3(0, moveSpeed * Time.deltaTime, 0f);
         
     }
 

@@ -34,7 +34,7 @@ public class ItemManager : MonoBehaviour
 
     public void OnDestroyItem()
     {
-        this.gameObject.SetActive(false);
+        gameObject.SetActive(false);
         //Destroy(gameObject);
     }
 

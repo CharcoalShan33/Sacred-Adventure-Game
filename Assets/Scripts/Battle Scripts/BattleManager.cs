@@ -314,10 +314,10 @@ public class BattleManager : MonoBehaviour
             if (battleList[i].moveName == activeCharacters[currentTurn].AttacksAvailable()[selectedAttack])
             {
 
-                //  Instantiate(battleList[i].effect, activeCharacters[selectPlayer].transform.position, activeCharacters[selectPlayer].transform.rotation);
+                // Instantiate(battleList[i].effect, activeCharacters[selectPlayer].transform.position, activeCharacters[selectPlayer].transform.rotation);
 
-                // movePower = battleList[i].power;
-                movePower = GetEffectandInstantiate(selectPlayer, i);
+                //movePower = battleList[i].power;
+              movePower = GetEffectandInstantiate(selectPlayer, i);
             }
 
 
@@ -338,22 +338,22 @@ public class BattleManager : MonoBehaviour
         Instantiate(selector, activeCharacters[currentTurn].transform.position, activeCharacters[currentTurn].transform.rotation);
     }
 
-    private void DealDamage(int selectedCharacter, int movePower)
+    private void DealDamage(int target, int movePower)
     {
-        float attackPower = activeCharacters[currentTurn].dexterity + activeCharacters[currentTurn].weaponPower;
-        float defenseAmount = activeCharacters[selectedCharacter].defense + activeCharacters[selectedCharacter].armorValue;
+        float attackPower = activeCharacters[currentTurn].strength + activeCharacters[currentTurn].weaponPower;
+        float defenseAmount = activeCharacters[target].defense + activeCharacters[target].armorValue;
 
         float damageAmount = (attackPower / defenseAmount) * movePower * Random.Range(.9f, 1.3f);
         int damageToGive = (int)damageAmount;
 
         damageToGive = CalculateCritical(damageToGive);
 
-        Debug.Log(activeCharacters[currentTurn].characterName + " Just Dealt " + damageAmount + " ( " + damageToGive + " ) to " + activeCharacters[selectedCharacter]);
+        Debug.Log(activeCharacters[currentTurn].characterName + " Just Dealt " + damageAmount + " ( " + damageToGive + " ) to " + activeCharacters[target]);
 
-        activeCharacters[selectedCharacter].TakeDamage(damageToGive);
-        //CharacterDamageUI characterDamage  = Instantiate(damageText1, activeCharacters[selectedCharacter].transform.position, activeCharacters[selectedCharacter].transform.rotation);
-        //characterDamage.SetDamage(damageToGive);
-        Instantiate(damageText1, activeCharacters[selectedCharacter].transform.position, activeCharacters[selectedCharacter].transform.rotation).SetDamage(damageToGive);
+        activeCharacters[target].TakeDamage(damageToGive);
+        CharacterDamageUI characterDamage  = Instantiate(damageText1, activeCharacters[target].transform.position, activeCharacters[target].transform.rotation);
+        characterDamage.SetDamage(damageToGive);
+       // Instantiate(damageText1, activeCharacters[target].transform.position, activeCharacters[target].transform.rotation).SetDamage(damageToGive);
 
         UpdatePlayerStats();
     }
@@ -407,10 +407,7 @@ public class BattleManager : MonoBehaviour
 
     public void PlayerAttack(string moveName, int selectEnemy)
     {
-        attack.interactable = true;
-        flee.interactable = false;
-        useItem.interactable = false;
-        magic.interactable = false;
+       
         //int selectEnemy = 3;
         int movePower = 0;
 
@@ -428,7 +425,7 @@ public class BattleManager : MonoBehaviour
         }
 
         InstantiateTarget();
-        //Instantiate(selector, activeCharacters[currentTurn].transform.position, activeCharacters[currentTurn].transform.rotation);
+       // Instantiate(selector, activeCharacters[currentTurn].transform.position, activeCharacters[currentTurn].transform.rotation);
         DealDamage(selectEnemy, movePower);
         uiHolder.SetActive(false);
         targetPanel.SetActive(false);
@@ -484,9 +481,7 @@ public class BattleManager : MonoBehaviour
     {
         magicMenu.SetActive(true);
 
-        attack.interactable = false;
-        flee.interactable = false;
-        useItem.interactable = false;
+       
         for (int i = 0; i < spellButtons.Length; i++)
         {
             if (activeCharacters[currentTurn].AttacksAvailable().Length > i)
@@ -516,6 +511,7 @@ public class BattleManager : MonoBehaviour
         chance = Random.Range(1, 100);
 
 
+
         if( Random.value > chance )
         {
             GameManager.instance.isBattleActive = false;
@@ -530,6 +526,15 @@ public class BattleManager : MonoBehaviour
             print("No escaping for you!");
         }
 
+    }
+
+    public void UseAbility()
+    {
+        if(activeCharacters[currentTurn].IsPlayer())
+        {
+           // if(activeCharacters)
+        }
+        ability.gameObject.SetActive(true);
     }
     public BattleCharacter GetBattleCharacter()
     {
