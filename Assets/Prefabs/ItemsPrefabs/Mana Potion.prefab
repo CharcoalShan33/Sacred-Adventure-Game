@@ -101,7 +101,7 @@ MonoBehaviour:
   itemType: 0
   itemName: Mana Potion
   itemDescription: Restores Magic Points.
-  value: 40
+  count: 1
   amountOfEffect: 50
   itemImage: {fileID: 0}
   weaponDexterity: 0

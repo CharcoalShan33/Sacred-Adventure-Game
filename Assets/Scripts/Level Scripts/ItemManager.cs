@@ -9,7 +9,7 @@ public class ItemManager : MonoBehaviour
     public ItemType itemType;
 
     public string itemName, itemDescription;
-    public int value;
+    public int count;
     public int amountOfEffect;
 
     public Sprite itemImage;
@@ -34,7 +34,8 @@ public class ItemManager : MonoBehaviour
 
     public void OnDestroyItem()
     {
-        Destroy(gameObject);
+        gameObject.SetActive(false);
+        //Destroy(gameObject);
     }
 
 }

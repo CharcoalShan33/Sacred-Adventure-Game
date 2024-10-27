@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &154527593546059897
+--- !u!1 &687196768908463823
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,37 +8,37 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7157824453678623861}
-  - component: {fileID: 1436481670664056491}
-  m_Layer: 0
+  - component: {fileID: 687196768908463822}
+  - component: {fileID: 687196768908463809}
+  m_Layer: 11
   m_Name: Graphics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7157824453678623861
+--- !u!4 &687196768908463822
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 154527593546059897}
+  m_GameObject: {fileID: 687196768908463823}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8398252678270975155}
+  m_Father: {fileID: 687196769793077974}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &1436481670664056491
+--- !u!212 &687196768908463809
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 154527593546059897}
+  m_GameObject: {fileID: 687196768908463823}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -70,9 +70,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -211832909
-  m_SortingLayer: 11
-  m_SortingOrder: 0
+  m_SortingLayerID: 1601194253
+  m_SortingLayer: 2
+  m_SortingOrder: 33
   m_Sprite: {fileID: 21300000, guid: a843e86279c8c4ef4a4b590f7ebf785b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -84,7 +84,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &6808807878311767315
+--- !u!1 &687196769793077975
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -92,50 +92,52 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8398252678270975155}
-  - component: {fileID: -7170064352133315893}
-  m_Layer: 0
+  - component: {fileID: 687196769793077974}
+  - component: {fileID: 687196769793077961}
+  m_Layer: 11
   m_Name: Battle Knight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8398252678270975155
+--- !u!4 &687196769793077974
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6808807878311767315}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.029422, y: -0.3332783, z: 0}
+  m_GameObject: {fileID: 687196769793077975}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -6.76, y: 2.3200002, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 7157824453678623861}
+  - {fileID: 687196768908463822}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-7170064352133315893
+--- !u!114 &687196769793077961
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6808807878311767315}
+  m_GameObject: {fileID: 687196769793077975}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0328450b3353a470e83c5598ba4d7511, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayer: 1
-  characterName: Sir Knight
+  characterName: Battle Knight
+  isAbsorbable: 0
   attacksAvailable:
   - Attack
-  - Flee
-  currentHP: 300
-  maxHp: 300
+  - Slash Attack
+  - Sun Strike
+  currentHP: 350
+  maxHp: 350
   currentMana: 45
   maxMana: 45
   speed: 25
@@ -143,7 +145,7 @@ MonoBehaviour:
   defense: 45
   magicRes: 35
   magicAttack: 30
-  dexterity: 50
+  dexterity: 40
   weaponPower: 75
   armorValue: 75
   isDead: 0

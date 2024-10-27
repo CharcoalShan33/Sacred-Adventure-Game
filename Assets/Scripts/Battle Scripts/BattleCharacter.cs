@@ -8,6 +8,8 @@ public class BattleCharacter : MonoBehaviour
 
     public string characterName;
 
+    [SerializeField] bool isAbsorbable;
+
     [SerializeField] string[] attacksAvailable;
 
     public int currentHP, maxHp, currentMana, maxMana, speed,
