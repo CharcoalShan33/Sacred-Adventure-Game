@@ -136,7 +136,7 @@ MonoBehaviour:
   - Flee
   currentHP: 300
   maxHp: 300
-  currentMana: 40
+  currentMana: 45
   maxMana: 45
   speed: 25
   strength: 42

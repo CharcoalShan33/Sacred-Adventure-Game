@@ -517,7 +517,7 @@ MonoBehaviour:
   - {fileID: 8900577470894415426, guid: 19e39d076c0b0470aa7ad39d21ada24b, type: 3}
   battleList:
   - moveName: Strike
-    manaCost: 5
+    manaCost: 0
     power: 5
     effect: {fileID: 9053397741720780673, guid: b34f9ffd608e14922bd6855724f5f72e, type: 3}
   - moveName: Void
@@ -525,11 +525,11 @@ MonoBehaviour:
     power: 5
     effect: {fileID: 2002624943907859669, guid: 2aa139a7e76ef43eeb7c336937b94f0e, type: 3}
   - moveName: Slash
-    manaCost: 5
+    manaCost: 0
     power: 5
     effect: {fileID: -1941742221785765242, guid: 6d53b3c61e960435dbc263c9ae458854, type: 3}
   - moveName: Hack
-    manaCost: 5
+    manaCost: 0
     power: 5
     effect: {fileID: 4505368211546002419, guid: 152d64228cee448b89707d84535adcc8, type: 3}
   - moveName: Spikes
